@@ -32,6 +32,8 @@ public class UserController {
 
         int result=userService.insertInfo(req);
 
+        System.out.print("hello word");
+
         return new ReturnData(Constants.RESPONSE_SUCCESS, result);
     }
 }
