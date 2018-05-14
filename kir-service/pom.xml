@@ -70,12 +70,7 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
     </dependency>
-    <!--阿里druid连接池-->
-    <!--<dependency>-->
-      <!--<groupId>com.alibaba</groupId>-->
-      <!--<artifactId>druid</artifactId>-->
-      <!--<version>1.0.9</version>-->
-    <!--</dependency>-->
+
   </dependencies>
   <build>
     <plugins>

@@ -1,6 +1,8 @@
 package com.ken;
 
 import com.ken.dto.UserReq;
+import com.ken.model.City;
+import com.ken.service.MongoCityService;
 import com.ken.service.UserService;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -23,6 +25,9 @@ public class AppTest
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private MongoCityService mongoCityService;
+
 
 
     @Test
@@ -33,4 +38,12 @@ public class AppTest
         userService.insertInfo(model);
 
     }
+    @Test
+    public void insertMongodbCity(){
+        City city=new City();
+        city.setCityName("王坤");
+        mongoCityService.insertInfo(city);
+    }
+
+
 }
