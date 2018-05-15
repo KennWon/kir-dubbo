@@ -3,6 +3,7 @@ package com.ken;
 import com.ken.dto.UserReq;
 import com.ken.model.City;
 import com.ken.service.MongoCityService;
+import com.ken.service.RedisService;
 import com.ken.service.UserService;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -28,7 +29,8 @@ public class AppTest
     @Autowired
     private MongoCityService mongoCityService;
 
-
+    @Autowired
+    private RedisService redisService;
 
     @Test
     public void shouldAnswerWithTrue()
@@ -45,5 +47,10 @@ public class AppTest
         mongoCityService.insertInfo(city);
     }
 
+    @Test
+    public void testRedis(){
+        redisService.set("wangkun","123",60);
+        System.out.println(redisService.get("wangkun"));
+    }
 
 }
