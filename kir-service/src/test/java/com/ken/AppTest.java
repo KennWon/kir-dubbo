@@ -1,7 +1,7 @@
 package com.ken;
 
 import com.ken.dto.UserReq;
-import com.ken.model.City;
+import com.ken.model.Goods;
 import com.ken.service.MongoCityService;
 import com.ken.service.RedisService;
 import com.ken.service.UserService;
@@ -42,9 +42,9 @@ public class AppTest
     }
     @Test
     public void insertMongodbCity(){
-        City city=new City();
-        city.setCityName("王坤");
-        mongoCityService.insertInfo(city);
+        Goods goods=new Goods();
+        goods.setName("王坤");
+        mongoCityService.insertInfo(goods);
     }
 
     @Test

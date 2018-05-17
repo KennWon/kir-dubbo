@@ -22,11 +22,12 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 // 注册为 Dubbo 服务
 @Service(version = "1.0.0")
 public class RedisServiceImpl implements RedisService {
-    @Autowired
-    RedisTemplate<String, String> redisTemplate;
 
     @Autowired
-    StringRedisTemplate stringRedisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
     private final static Logger logger = LoggerFactory.getLogger(RedisServiceImpl.class);
 
@@ -89,6 +90,7 @@ public class RedisServiceImpl implements RedisService {
         }
         return null;
     }
+
 
     @Override
     public void del(String key) {
