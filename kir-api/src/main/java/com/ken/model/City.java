@@ -15,7 +15,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "City")
 public class City implements Serializable {
 
     private static final long serialVersionUID = -1L;

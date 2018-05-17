@@ -1,6 +1,6 @@
 package com.ken.service;
 
-import com.ken.model.City;
+import com.ken.model.Goods;
 
 /**
  * 城市业务 Dubbo Mongodb服务层
@@ -9,5 +9,5 @@ import com.ken.model.City;
  */
 public interface MongoCityService {
 
-    void insertInfo(City city);
+    void insertInfo(Goods goods);
 }
