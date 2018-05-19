@@ -1,3 +1,4 @@
+/*
 package com.ken;
 
 import com.ken.dto.UserReq;
@@ -14,9 +15,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
+*/
 /**
  * Unit test for simple App.
- */
+ *//*
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {ServiceApplication.class})
 @ActiveProfiles("dev")
@@ -54,3 +57,4 @@ public class AppTest
     }
 
 }
+*/
