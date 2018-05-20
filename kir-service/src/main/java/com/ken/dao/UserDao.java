@@ -18,5 +18,5 @@ public interface UserDao {
 
     int updateByPrimaryKeySelective(UserModel record);
 
-    int updateByPrimaryKey(UserModel record);
+
 }

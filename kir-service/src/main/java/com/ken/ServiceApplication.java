@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@MapperScan("com.ken.dao")
 public class ServiceApplication {
 
 	@Bean

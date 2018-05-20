@@ -12,66 +12,7 @@
         <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
         <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP"/>
     </resultMap>
-    <sql id="Example_Where_Clause">
-        <where>
-            <foreach collection="oredCriteria" item="criteria" separator="or">
-                <if test="criteria.valid">
-                    <trim prefix="(" suffix=")" prefixOverrides="and">
-                        <foreach collection="criteria.criteria" item="criterion">
-                            <choose>
-                                <when test="criterion.noValue">
-                                    and ${criterion.condition}
-                                </when>
-                                <when test="criterion.singleValue">
-                                    and ${criterion.condition} #{criterion.value}
-                                </when>
-                                <when test="criterion.betweenValue">
-                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                                </when>
-                                <when test="criterion.listValue">
-                                    and ${criterion.condition}
-                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
-                                             separator=",">
-                                        #{listItem}
-                                    </foreach>
-                                </when>
-                            </choose>
-                        </foreach>
-                    </trim>
-                </if>
-            </foreach>
-        </where>
-    </sql>
-    <sql id="Update_By_Example_Where_Clause">
-        <where>
-            <foreach collection="example.oredCriteria" item="criteria" separator="or">
-                <if test="criteria.valid">
-                    <trim prefix="(" suffix=")" prefixOverrides="and">
-                        <foreach collection="criteria.criteria" item="criterion">
-                            <choose>
-                                <when test="criterion.noValue">
-                                    and ${criterion.condition}
-                                </when>
-                                <when test="criterion.singleValue">
-                                    and ${criterion.condition} #{criterion.value}
-                                </when>
-                                <when test="criterion.betweenValue">
-                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                                </when>
-                                <when test="criterion.listValue">
-                                    and ${criterion.condition}
-                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
-                                             separator=",">
-                                        #{listItem}
-                                    </foreach>
-                                </when>
-                            </choose>
-                        </foreach>
-                    </trim>
-                </if>
-            </foreach>
-        </where>
-    </sql>
+
     <sql id="Base_Column_List">
     id, account, password, salt, name, idCard, status, createTime, updateTime
   </sql>
@@ -88,11 +29,11 @@
   </delete>
 
     <insert id="insert" parameterType="com.ken.model.UserModel">
-    insert into kir_user (id, account, password,
+    insert into kir_user (account, password,
     salt, name, idCard,
     status, createTime, updateTime
     )
-    values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+    values (#{account,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
     #{salt,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{idcard,jdbcType=VARCHAR},
     #{status,jdbcType=TINYINT}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}
     )
@@ -100,9 +41,6 @@
     <insert id="insertSelective" parameterType="com.ken.dto.UserReq">
         insert into kir_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="id != null">
-                id,
-            </if>
             <if test="account != null">
                 account,
             </if>
@@ -129,9 +67,6 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="id != null">
-                #{id,jdbcType=INTEGER},
-            </if>
             <if test="account != null">
                 #{account,jdbcType=VARCHAR},
             </if>
@@ -189,16 +124,4 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.ken.model.UserModel">
-    update kir_user
-    set account = #{account,jdbcType=VARCHAR},
-    password = #{password,jdbcType=VARCHAR},
-    salt = #{salt,jdbcType=VARCHAR},
-    name = #{name,jdbcType=VARCHAR},
-    idCard = #{idcard,jdbcType=VARCHAR},
-    status = #{status,jdbcType=TINYINT},
-    createTime = #{createtime,jdbcType=TIMESTAMP},
-    updateTime = #{updatetime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
 </mapper>

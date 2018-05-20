@@ -7,6 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.core.convert.*;
 import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
+
+/**
+ * 配置MongoDB去掉
+ */
 @Configuration
 public class MongoConfig {
     @Bean

@@ -1,4 +1,3 @@
-/*
 package com.ken;
 
 import com.ken.dto.UserReq;
@@ -15,10 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-*/
-/**
- * Unit test for simple App.
- *//*
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {ServiceApplication.class})
@@ -45,7 +41,7 @@ public class AppTest
     }
     @Test
     public void insertMongodbCity(){
-        Goods goods=new Goods();
+        Goods goods = new Goods();
         goods.setName("王坤");
         mongoCityService.insertInfo(goods);
     }
@@ -57,4 +53,3 @@ public class AppTest
     }
 
 }
-*/
